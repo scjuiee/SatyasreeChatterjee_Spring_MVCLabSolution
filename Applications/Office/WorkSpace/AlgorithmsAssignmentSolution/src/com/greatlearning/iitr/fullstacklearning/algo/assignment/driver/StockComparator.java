@@ -13,7 +13,7 @@ public class StockComparator {
 	public void displayStockPricesASCOrder(List<Double> stockPriceList) {
 		 Collections.sort(stockPriceList);
 		 System.out.println("Stock prices in ascending order are :");
-		 System.out.println("\n");
+		 System.out.println(" ");
 		 for(int i =0;i<stockPriceList.size();i++) {
 			 System.out.print(stockPriceList.get(i)+" ");
 		 }
@@ -27,7 +27,7 @@ public class StockComparator {
 	public void displayStockPricesDESCOrder(List<Double> stockPriceList) {
 		Collections.sort(stockPriceList,Collections.reverseOrder());
 		 System.out.println("Stock prices in descending order are :");
-		 System.out.println("\n");
+		 System.out.println(" ");
 		 for(int i =0;i<stockPriceList.size();i++) {
 			 System.out.print(stockPriceList.get(i)+" ");
 		 }
@@ -41,11 +41,13 @@ public class StockComparator {
 	public void calculateNoOfCompStockRise(List<Boolean> stockPriceChangedList) {
 		Integer sum =0;
 		for(int i = 0;i<stockPriceChangedList.size();i++) {
+			//System.out.println(stockPriceChangedList.get(i));
 			if(stockPriceChangedList.get(i)) {
-				sum =+ 1;
+				//System.out.println("inside loop "+ i);
+				sum += 1;
 			}
 		}
-		System.out.println("Total no of companies whose stock price rose today "+sum);
+		System.out.println("Total no of companies whose stock price rose today : "+sum);
 		
 	}
 	
@@ -56,12 +58,15 @@ public class StockComparator {
 	 */
 	public void calculateNoOfCompStockDecline(List<Boolean> stockPriceChangedList) {
 		Integer sum =0;
+		//System.out.println("stock price declined size ..."+stockPriceChangedList.size());		
 		for(int i = 0;i<stockPriceChangedList.size();i++) {
+			//System.out.println(stockPriceChangedList.get(i));
 			if(!stockPriceChangedList.get(i)) {
-				sum =+ 1;
+				//System.out.println("inside false loop "+ i);
+				sum += 1;
 			}
 		}
-		System.out.println("Total no of companies whose stock price declined today "+sum);
+		System.out.println("Total no of companies whose stock price declined today : "+sum);
 		
 	}
 

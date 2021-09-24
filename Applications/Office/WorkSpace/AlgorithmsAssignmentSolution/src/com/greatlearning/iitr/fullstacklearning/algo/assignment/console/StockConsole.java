@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.greatlearning.iitr.fullstacklearning.algo.assignment.driver.StockChecker;
 import com.greatlearning.iitr.fullstacklearning.algo.assignment.driver.StockComparator;
 
 public class StockConsole {
@@ -30,7 +31,7 @@ public class StockConsole {
 			displayOperations();
 			while (optNo != 0) {
 				optNo = Integer.parseInt(myObj.nextLine());
-				performOperations(optNo,stockPriceList,stockPriceChangedList);
+				performOperations(optNo,stockPriceList,stockPriceChangedList,myObj);
 				displayOperations();
 			}
 
@@ -46,6 +47,7 @@ public class StockConsole {
 	 * perform
 	 */
 	static void displayOperations() {
+		System.out.println(" ");
 		System.out.println("================================");
 		System.out.println("Enter the operation that you want to perform");
 		System.out.println("1. Display the companies stock prices in ascending order");
@@ -64,27 +66,29 @@ public class StockConsole {
 	 * @param stockPriceList
 	 * @param stockPriceChangedList
 	 */
-	static void performOperations(Integer optNo,List<Double> stockPriceList,List<Boolean> stockPriceChangedList) {
+	static void performOperations(Integer optNo,List<Double> stockPriceList,List<Boolean> stockPriceChangedList,Scanner myObj) {
 		switch (optNo) {
 		// Case statements
 		case 1:
-			System.out.println("you selected option 1");
+			//System.out.println("you selected option 1");
 			new StockComparator().displayStockPricesASCOrder(stockPriceList);
 			break;
 		case 2:
-			System.out.println("you selected option 2");
+			//System.out.println("you selected option 2");
 			new StockComparator().displayStockPricesDESCOrder(stockPriceList);
 			break;
 		case 3:
-			System.out.println("you selected option 3");
+			//System.out.println("you selected option 3");
 			new StockComparator().calculateNoOfCompStockRise(stockPriceChangedList);
 			break;
 		case 4:
-			System.out.println("you selected option 4");
+			//System.out.println("you selected option 4");
 			new StockComparator().calculateNoOfCompStockDecline(stockPriceChangedList);
 			break;
 		case 5:
-			System.out.println("you selected option 5");
+			//System.out.println("you selected option 5");
+			System.out.println("Enter the key value");
+			new StockChecker().checkStockValue(myObj,stockPriceList);
 			break;
 		case 0:
 			System.out.println("you selected option 0.you will be exited from the app");
