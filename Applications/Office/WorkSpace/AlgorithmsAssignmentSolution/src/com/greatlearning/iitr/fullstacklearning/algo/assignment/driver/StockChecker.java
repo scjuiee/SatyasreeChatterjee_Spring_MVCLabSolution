@@ -27,31 +27,42 @@ public class StockChecker {
 		int listLength = stockPriceList.size();
 		Double firstElement = stockPriceList.get(0);
 		Double lastElement = stockPriceList.get(listLength-1);
+		String msg = "";
 		
 		if((stockVal < firstElement) || (stockVal > lastElement) ) {
-			System.out.println("Value not found");
+			//System.out.println("Out of range");
+			msg = "Value not found";
 		}
 		else {
 			if((stockVal - firstElement) < (lastElement - stockVal)) {
 				for(int i = 0; i<stockPriceList.size();i++) {
 					if(stockVal.equals(stockPriceList.get(i))) {
-						System.out.println("Stock of Value "+stockVal+ " is present");
+						//System.out.println("found in list");
+						//System.out.println("Stock of Value "+stockVal+ " is present");
+						msg = "Stock of Value "+stockVal+ " is present";
 						break;
 					}else {
-						System.out.println("Value not found");
+						//System.out.println("not found inside range");
+						//System.out.println("Value not found");
+						msg = "Value not found";
 					}
 				}
 			}else {
 				Collections.sort(stockPriceList,Collections.reverseOrder());
 				for(int i = 0; i<stockPriceList.size();i++) {
 					if(stockVal.equals(stockPriceList.get(i))) {
-						System.out.println("Stock of Value "+stockVal+ " is present");
+						//System.out.println("found in reverse list");
+						//System.out.println("Stock of Value "+stockVal+ " is present");
+						msg = "Stock of Value "+stockVal+ " is present";
 						break;
 					}else {
-						System.out.println("Value not found");
+						//System.out.println("Not found in reverse order range");
+						//System.out.println("Value not found");
+						msg = "Value not found";
 					}
 				}
 			}
 		}
+		System.out.println(msg);
 	}
 }
