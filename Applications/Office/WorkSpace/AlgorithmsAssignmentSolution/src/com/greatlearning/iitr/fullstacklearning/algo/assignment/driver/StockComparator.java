@@ -12,7 +12,7 @@ public class StockComparator {
 	 */
 	public void displayStockPricesASCOrder(List<Double> stockPriceList) {
 		 Collections.sort(stockPriceList);
-		 System.out.println("Stock prices in ascending order are :");
+		 System.out.println("Stock prices in ascending order are : ");
 		 System.out.println(" ");
 		 for(int i =0;i<stockPriceList.size();i++) {
 			 System.out.print(stockPriceList.get(i)+" ");
@@ -26,7 +26,7 @@ public class StockComparator {
 	 */
 	public void displayStockPricesDESCOrder(List<Double> stockPriceList) {
 		Collections.sort(stockPriceList,Collections.reverseOrder());
-		 System.out.println("Stock prices in descending order are :");
+		 System.out.println("Stock prices in descending order are : ");
 		 System.out.println(" ");
 		 for(int i =0;i<stockPriceList.size();i++) {
 			 System.out.print(stockPriceList.get(i)+" ");
