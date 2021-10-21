@@ -22,6 +22,11 @@ public class SkewedTreeConverter {
 	// Function to to flatten the binary
 	// search tree into a skewed tree in
 	// increasing / decreasing order
+	/**
+	 * 
+	 * @param root
+	 * @param order
+	 */
 	static void flattenBST(Node root, int order) {
 
 		// Base Case
